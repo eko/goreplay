@@ -41,6 +41,7 @@ func NewMiddleware(command string) *Middleware {
 	m.Stdin, _ = cmd.StdinPipe()
 
 	cmd.Stderr = os.Stderr
+	cmd.Stdout = os.Stdout
 
 	go m.read(m.Stdout)
 
